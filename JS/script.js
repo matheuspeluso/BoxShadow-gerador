@@ -9,10 +9,16 @@ class BoxShadowGenerator{
         blurRef,
         spread,
         spreadRef,
+        color,
+        colorRef,
+        opacity,
+        opacityRef,
+        inset,
         previewBox,
         rule,
         webkitRule,
-        mozRule){
+        mozRule,
+        ){
 
         this.horizontal = horizontal
         this.horizontalRef = horizontalRef
@@ -22,6 +28,11 @@ class BoxShadowGenerator{
         this.blurRef = blurRef
         this.spread = spread
         this.spreadRef = spreadRef
+        this.color = color
+        this.colorRef = colorRef
+        this.opacity = opacity
+        this.opacityRef = opacityRef
+        this.inset = inset
         this.previewBox = previewBox
         this.rule = rule
         this.webkitRule = webkitRule
@@ -90,6 +101,15 @@ const rule = document.querySelector("#rule span")
 const webkitRule = document.querySelector("#webkit-rule span")
 const mozRule = document.querySelector("#moz-rule span")
 
+/*Seleção novos elementos */
+
+const color = document.querySelector("#color")
+const colorRef = document.querySelector("#color-value")
+const opacity = document.querySelector("#opacity")
+const opacityRef = document.querySelector("#opacity-value")
+const inset = document.querySelector("#inset")
+
+
 const boxShadow = new BoxShadowGenerator(horizontal,
     horizontalRef,
     vertical,
@@ -98,15 +118,19 @@ const boxShadow = new BoxShadowGenerator(horizontal,
     blurRef,
     spread,
     spreadRef,
+    color,
+    colorRef,
+    opacity,
+    opacityRef,
+    inset,
     previewBox,
     rule,
     webkitRule,
     mozRule
     
 );
-boxShadow.initialize();
 
-   // console.log(boxShadow);
+boxShadow.initialize();
 
 //Eventos
 horizontal.addEventListener("input",(e)=>{
